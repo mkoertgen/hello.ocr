@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <Targetplatformversion>8.0</Targetplatformversion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Windows.Media">
+      <HintPath>C:\WINDOWS\System32\WinMetadata\Windows.Media.winmd</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
