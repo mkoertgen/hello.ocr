@@ -1,8 +1,8 @@
-﻿//using Windows.ApplicationModel;
-//using Windows.Globalization;
-//using Windows.Graphics.Imaging;
-//using Windows.UI.Xaml.Controls;
-//using Windows.Media.Ocr;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using Windows.Graphics.Imaging;
+using WindowsPreview.Media.Ocr;
 using NUnit.Framework;
 
 namespace hello.ocr
@@ -14,16 +14,20 @@ namespace hello.ocr
     [TestFixture]
     internal class OcrLearningTests
     {
-        //OcrEngine ocrEngine;
-
-        public OcrLearningTests()
-        {
-            //ocrEngine = OcrEngine.TryCreateFromLanguage(new Language("en"));
-        }
-
         [Test]
-        public void TestOcr()
+        public async void TestOcr(string fileName)
         {
+            var ocrEngine = new OcrEngine(OcrLanguage.English);
+
+            using (var stream = File.OpenRead(fileName))
+            {
+                var winRtStream = stream.AsRandomAccessStream();
+                var decoder = await BitmapDecoder.CreateAsync(winRtStream);
+                var bitmap = await decoder.GetPixelDataAsync();
+                var ocrResult = await ocrEngine.RecognizeAsync(decoder.PixelHeight, decoder.PixelWidth, bitmap.DetachPixelData());
+                var text = string.Join(Environment.NewLine, ocrResult.Lines);
+                Trace.WriteLine(text);
+            }
         }
     }
 }
