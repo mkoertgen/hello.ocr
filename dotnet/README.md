@@ -1,8 +1,17 @@
 # hello.ocr
 
-A spike checking out Windows.Media.Ocr
+A quick example on [Tesseract](https://github.com/tesseract-ocr/tesseract) on dotnet with [charlesw/tesseract](https://github.com/charlesw/tesseract)
 
-## Quick Links
+See also
+
+- DotNet Samples: [charlesw/tesseract-samples](https://github.com/charlesw/tesseract-samples)
+- Trained Models: [tesseract-ocr/tessdata](https://github.com/tesseract-ocr/tessdata)
+
+## Deprecated
+
+A spike checking out Windows.Media.Ocr (Deprecated since 2014).
+
+### Quick Links
 
 - [Microsoft/Windows-universal-samples, OCR](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OCR)
 - [How to extract text from an image (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.ocr.aspx?cs-save-lang=1&cs-lang=csharp#code-snippet-2)
