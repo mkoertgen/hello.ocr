@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  parsr:
+    image: axarev/parsr
+    ports: ['3001:3001']
+
+  parsr-ui:
+    image: axarev/parsr-ui-localhost
+    ports: ['8080:80']
